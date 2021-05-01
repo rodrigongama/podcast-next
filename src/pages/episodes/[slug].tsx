@@ -15,8 +15,8 @@ type Episode = {
   title: string;
   thumbnail: string;
   members: string;
-  durantion: number;
-  durantionAsString: string;
+  duration: number;
+  durationAsString: string;
   url: string;
   publishedAt: string;
   description: string;
@@ -55,7 +55,7 @@ export default function Episode({ episode }: EpisodeProps) {
         <h1>{episode.title}</h1>
         <span>{episode.members}</span>
         <span>{episode.publishedAt}</span>
-        <span>{episode.durantionAsString}</span>
+        <span>{episode.durationAsString}</span>
       </header>
 
       <div
@@ -92,7 +92,7 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
       locale: ptBR,
     }),
     duration: Number(data.file.duration),
-    durantionAsString: convertDurationToTimeString(Number(data.file.duration)),
+    durationAsString: convertDurationToTimeString(Number(data.file.duration)),
     description: data.description,
     url: data.file.url,
   };

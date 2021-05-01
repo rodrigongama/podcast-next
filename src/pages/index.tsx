@@ -16,7 +16,7 @@ type Episode = {
   thumbnail: string;
   members: string;
   duration: number;
-  durantionAsString: string;
+  durationAsString: string;
   url: string;
   publishedAt: string;
 };
@@ -58,7 +58,7 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
                   </Link>
                   <p>{episode.members}</p>
                   <span>{episode.publishedAt}</span>
-                  <span>{episode.durantionAsString}</span>
+                  <span>{episode.durationAsString}</span>
                 </div>
 
                 <button
@@ -107,7 +107,7 @@ export default function Home({ latestEpisodes, allEpisodes }: HomeProps) {
                   </td>
                   <td>{episode.members}</td>
                   <td style={{ width: 100 }}>{episode.publishedAt}</td>
-                  <td>{episode.durantionAsString}</td>
+                  <td>{episode.durationAsString}</td>
                   <td>
                     <button
                       type="button"
@@ -147,7 +147,7 @@ export const getStaticProps: GetStaticProps = async () => {
         locale: ptBR,
       }),
       duration: Number(episode.file.duration),
-      durantionAsString: convertDurationToTimeString(
+      durationAsString: convertDurationToTimeString(
         Number(episode.file.duration),
       ),
       url: episode.file.url,
